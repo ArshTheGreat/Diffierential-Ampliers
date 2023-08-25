@@ -1,0 +1,20 @@
+*** SPICE deck for cell schematioc{sch} from library cmos-chandan
+*** Created on Tue Nov 08, 2022 18:09:48
+*** Last revised on Tue Nov 08, 2022 20:25:58
+*** Written on Tue Nov 08, 2022 20:47:08 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: schematioc{sch}
+Mnmos@0 VOUT nmos@0_g gnd gnd nmos L=0.045U W=0.112U
+Mpmos@0 vdd VIN VOUT vdd pmos L=0.045U W=0.225U
+
+* Spice Code nodes in cell cell 'schematioc{sch}'
+.INCLUDE PDK file 45nm.txt
+.PARAM SUPPLY 1.8V
+VDD VDD 0 DC 'SUPPLY'
+VIN VIN 0 PULSE 0 'SUPPLY' 100PS 10PS 10PS 200PS 500PS
+.TRAN 1PS 600PS
+.END
